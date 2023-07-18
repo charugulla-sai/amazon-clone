@@ -1,8 +1,4 @@
 @media (max-width: 1300px) {
-  .header-container {
-    background-color: pink;
-  }
-
   .hero-note {
     top: 24rem;
   }
@@ -17,10 +13,6 @@
 }
 
 @media (max-width: 1150px) {
-  .header-container {
-    background-color: yellow;
-  }
-
   .hero-note {
     top: 22rem;
   }
@@ -37,10 +29,6 @@
 @media (max-width: 1000px) {
   html {
     font-size: 62.5%;
-  }
-
-  .header-container {
-    background-color: green;
   }
 
   .hero-note {
@@ -70,10 +58,6 @@
     font-size: 62.5%;
   }
 
-  .header-container {
-    background-color: red;
-  }
-
   .hero-note {
     top: 17rem;
     font-size: 0.8rem;
@@ -100,10 +84,6 @@
 @media (max-width: 750px) {
   html {
     font-size: 56%;
-  }
-
-  .header-container {
-    background-color: skyblue;
   }
 
   .hero-note {
@@ -212,16 +192,15 @@
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
   }
-  .product-image{
+  .product-image {
     margin: 0 auto;
     margin-bottom: 1rem;
-    
   }
 
   .product {
     padding: 2rem;
   }
-  .product-description{
+  .product-description {
     display: flex;
     flex-direction: column;
     align-items: center;
