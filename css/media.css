@@ -210,5 +210,7 @@
   }
   .back-color {
     background: linear-gradient(to top, #eee 1%, transparent);
+    /* display: none; */
+    height: 10rem;
   }
 }
