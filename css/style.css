@@ -143,7 +143,7 @@ main {
   position: absolute;
   top: 31rem;
   width: calc(100% - 30px);
-  margin: 0 15px ;
+  margin: 0 15px;
 }
 
 .grid-4--cols {
@@ -158,6 +158,10 @@ main {
   box-shadow: 0px 3px 4px 0.5px #00000025;
 }
 
+.product:first-child .rating svg:last-child {
+  stroke: rgba(0, 0, 0, 0.267);
+  fill: none;
+}
 .rating svg {
   stroke: #ce9f05;
   fill: #ffd904;
