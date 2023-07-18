@@ -48,3 +48,88 @@ setInterval(() => {
     prevSlide();
   }
 }, 5000);
+
+const products = [
+  {
+    id: 0,
+    refName: "Product-1",
+    dealPercent: "41",
+    rating: 3,
+    title: "Camera-1",
+  },
+  {
+    id: 1,
+    refName: "Product-2",
+    dealPercent: "42",
+    rating: 4,
+    title: "Camera-2",
+  },
+  {
+    id: 2,
+    refName: "Product-3",
+    dealPercent: "43",
+    rating: 1,
+    title: "Camera-3",
+  },
+  {
+    id: 3,
+    refName: "Product-4",
+    dealPercent: "44",
+    rating: 3,
+    title: "Camera-4",
+  },
+  {
+    id: 4,
+    refName: "Product-5",
+    dealPercent: "45",
+    rating: 4,
+    title: "Camera-5",
+  },
+  {
+    id: 5,
+    refName: "Product-6",
+    dealPercent: "41",
+    rating: 3,
+    title: "Camera-6",
+  },
+  {
+    id: 0,
+    refName: "Product-7",
+    dealPercent: "47",
+    rating: 3,
+    title: "Camera-7",
+  },
+  {
+    id: 0,
+    refName: "Product-8",
+    dealPercent: "48",
+    rating: 3,
+    title: "Camera-8",
+  },
+];
+
+// Selecting product template
+const productTemplate = document.querySelector(".product-template");
+// Selecting main product container
+const productContainer = document.querySelector(".products-container");
+
+function createProductCard(product){
+  // Selecting product tag in template and cloning it
+  const productCardEl = productTemplate.content.cloneNode(true).children[0];
+  // Selecting Elements of the cloned product
+  const productTitleEl = productCardEl.querySelector(".product-title");
+  const productImageEl = productCardEl.querySelector(".product-image").children[0];
+  const productDealTagEl = productCardEl.querySelector(".deal-tag");
+  // Assigning respective values to elements
+  productImageEl.attributes.src.textContent = `./images/${product.refName}.jpg`;
+  productTitleEl.textContent = product.title;
+  productDealTagEl.textContent = `Up to ${product.dealPercent}% off`;
+  return productCardEl;
+}
+
+// Rendering all the products using forEach loop
+products.forEach((product) => {
+  const productCard = createProductCard(product);
+  // Append the cloned and updated product to the products container
+  productContainer.append(productCard);
+});
