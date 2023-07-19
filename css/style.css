@@ -25,10 +25,15 @@ body {
 
 .img-logo {
   width: 10rem;
+  cursor: pointer;
 }
 
 svg {
   width: 1rem;
+}
+
+.delivery{
+cursor: pointer;
 }
 
 .location-icon {
@@ -77,6 +82,15 @@ svg {
   outline: none;
 }
 
+.cart-icon svg{
+  width: 2.4rem;
+}
+
+.cart-name{
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+}
 /* //////////////////////////////////////////////////////////////////////// */
 
 .container {

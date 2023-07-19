@@ -89,7 +89,7 @@ const products = [
     id: 5,
     refName: "Product-6",
     dealPercent: "41",
-    rating: 3,
+    rating: 4,
     title: "Camera-6",
   },
   {
@@ -103,7 +103,7 @@ const products = [
     id: 0,
     refName: "Product-8",
     dealPercent: "48",
-    rating: 3,
+    rating: 5,
     title: "Camera-8",
   },
 ];
