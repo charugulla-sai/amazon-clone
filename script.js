@@ -55,7 +55,7 @@ const products = [
     refName: "Product-1",
     dealPercent: "41",
     rating: 3,
-    title: "Camera-1",
+    title: "Sony XM8-347539 Camera",
   },
   {
     id: 1,
@@ -113,12 +113,13 @@ const productTemplate = document.querySelector(".product-template");
 // Selecting main product container
 const productContainer = document.querySelector(".products-container");
 
-function createProductCard(product){
+function createProductCard(product) {
   // Selecting product tag in template and cloning it
   const productCardEl = productTemplate.content.cloneNode(true).children[0];
   // Selecting Elements of the cloned product
   const productTitleEl = productCardEl.querySelector(".product-title");
-  const productImageEl = productCardEl.querySelector(".product-image").children[0];
+  const productImageEl =
+    productCardEl.querySelector(".product-image").children[0];
   const productDealTagEl = productCardEl.querySelector(".deal-tag");
   // Assigning respective values to elements
   productImageEl.attributes.src.textContent = `./images/${product.refName}.jpg`;
@@ -130,6 +131,11 @@ function createProductCard(product){
 // Rendering all the products using forEach loop
 products.forEach((product) => {
   const productCard = createProductCard(product);
+
+  for (let i = 0; i < product.rating; i++) {
+    productCard.querySelector(".rating").children[i].classList.remove("no");
+  }
+
   // Append the cloned and updated product to the products container
   productContainer.append(productCard);
 });
