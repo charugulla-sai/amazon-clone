@@ -88,6 +88,8 @@ svg {
 
 .cart-container {
   cursor: pointer;
+  text-decoration: none;
+  color: #fff;
 }
 
 .cart-name {
