@@ -32,8 +32,8 @@ svg {
   width: 1rem;
 }
 
-.delivery{
-cursor: pointer;
+.delivery {
+  cursor: pointer;
 }
 
 .location-icon {
@@ -82,14 +82,17 @@ cursor: pointer;
   outline: none;
 }
 
-.cart-icon svg{
+.cart-icon svg {
   width: 2.4rem;
 }
 
-.cart-name{
+.cart-container {
+  cursor: pointer;
+}
+
+.cart-name {
   font-size: 1.3rem;
   font-weight: 600;
-  cursor: pointer;
 }
 /* //////////////////////////////////////////////////////////////////////// */
 
@@ -168,7 +171,7 @@ main {
   box-shadow: 0px 3px 4px 0.5px #00000025;
 }
 
-.rating{
+.rating {
   display: flex;
 }
 
