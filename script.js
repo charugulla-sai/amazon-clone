@@ -48,13 +48,17 @@ setInterval(() => {
     prevSlide();
   }
 }, 5000);
+//////////////////////////////////////////////
+
+//////// Routing ///////////
+let onCartPage = false;
 
 const products = [
   {
     id: 0,
     refName: "Product-1",
-    dealPercent: "41",
-    rating: 3,
+    dealPercent: "91",
+    rating: 2,
     title: "Sony XM8-347539 Camera",
   },
   {
@@ -93,20 +97,26 @@ const products = [
     title: "Basic white running shoes men",
   },
   {
-    id: 0,
+    id: 6,
     refName: "Product-7",
     dealPercent: "47",
     rating: 3,
     title: "Misolo cosmetic",
   },
   {
-    id: 0,
+    id: 7,
     refName: "Product-8",
     dealPercent: "48",
     rating: 5,
     title: "Vintage DSLR camera",
   },
 ];
+
+let cartProducts = [];
+
+let productsArray = [];
+// const singleProduct = products.find((item)=>{return item.id == '0'});
+// console.log(singleProduct);
 
 // Selecting product template
 const productTemplate = document.querySelector(".product-template");
@@ -129,13 +139,40 @@ function createProductCard(product) {
 }
 
 // Rendering all the products using forEach loop
-products.forEach((product) => {
-  const productCard = createProductCard(product);
-
-  for (let i = 0; i < product.rating; i++) {
-    productCard.querySelector(".rating").children[i].classList.remove("no");
-  }
-
-  // Append the cloned and updated product to the products container
-  productContainer.append(productCard);
+const cartClick = document.querySelector(".cart-container");
+cartClick.addEventListener("click", () => {
+  onCartPage = true;
+  productContainer.textContent = "";
+  displayProducts();
 });
+
+const homeClick = document.querySelector(".icon-logo");
+homeClick.addEventListener("click", () => {
+  onCartPage = false;
+  productContainer.textContent = "";
+  displayProducts();
+});
+
+function displayProducts() {
+  onCartPage == false
+    ? (productsArray = products)
+    : (productsArray = cartProducts);
+
+  productsArray.forEach((product) => {
+    const productCard = createProductCard(product);
+
+    for (let i = 0; i < product.rating; i++) {
+      productCard.querySelector(".rating").children[i].classList.remove("no");
+    }
+
+    // Append the cloned and updated product to the products container
+    productContainer.append(productCard);
+
+    productCard.querySelector(".btn").addEventListener("click", (e) => {
+      cartProducts.push(product);
+      console.log(cartProducts);
+    });
+  });
+}
+
+displayProducts();
