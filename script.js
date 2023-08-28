@@ -115,7 +115,9 @@ const products = [
 let cartProducts = [];
 
 let productsArray = [];
-// const singleProduct = products.find((item)=>{return item.id == '0'});
+const singleProduct = products.find((item) => {
+  return item.id == "0";
+});
 // console.log(singleProduct);
 
 // Selecting product template
@@ -176,3 +178,20 @@ function displayProducts() {
 }
 
 displayProducts();
+
+// Check if the Wake Lock API is supported
+if ('wakeLock' in navigator) {
+  // Request a wake lock
+  navigator.wakeLock.request('screen')
+    .then(wakeLock => {
+      console.log('Screen wake lock active');
+      
+      // You can release the wake lock when it's no longer needed
+      // wakeLock.release();
+    })
+    .catch(error => {
+      console.error('Could not obtain screen wake lock:', error);
+    });
+} else {
+  console.warn('Screen wake lock API not supported');
+}
