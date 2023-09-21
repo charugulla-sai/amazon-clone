@@ -126,22 +126,6 @@ function createProductCard(product) {
   return productCardEl;
 }
 
-// Rendering Cart products
-const cartClick = document.querySelector('.cart-container');
-cartClick.addEventListener('click', () => {
-  onCartPage = true;
-  productContainer.textContent = '';
-  displayProducts();
-});
-
-// Rendering All products
-const homeClick = document.querySelector('.icon-logo');
-homeClick.addEventListener('click', () => {
-  onCartPage = false;
-  productContainer.textContent = '';
-  displayProducts();
-});
-
 function displayProducts() {
   onCartPage == false
     ? (productsArray = products)
@@ -164,4 +148,24 @@ function displayProducts() {
   });
 }
 
+// Rendering Cart products
+const cartClick = document.querySelector('.cart-container');
+cartClick.addEventListener('click', () => {
+  onCartPage = true;
+  productContainer.textContent = '';
+  displayProducts();
+});
+
+// Rendering All products
+const homeClick = document.querySelector('.icon-logo');
+homeClick.addEventListener('click', () => {
+  onCartPage = false;
+  productContainer.textContent = '';
+  displayProducts();
+});
+
+
 displayProducts();
+
+
+// Displaying the single cart item instead of duplicate.
